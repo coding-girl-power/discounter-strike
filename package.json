@@ -9,7 +9,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Angela Galliat, Lea Rosema",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "husky": "^1.3.1",
     "parcel": "^1.12.3",
@@ -24,5 +24,9 @@
   },
   "dependencies": {
     "phaser": "^3.16.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/coding-girl-power/discounter-strike.git"
   }
 }
