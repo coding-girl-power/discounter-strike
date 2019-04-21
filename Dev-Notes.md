@@ -29,3 +29,7 @@
 
 - Website: <https://phasereditor2d.com/>
 - Youtube Video: Animation editor progress (Phaser 3): <https://www.youtube.com/watch?v=0EBGrPlFQJI>
+
+## Piskel (Sprite Editor)
+
+- https://www.piskelapp.com/
