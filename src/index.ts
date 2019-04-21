@@ -1,5 +1,5 @@
 import './styles.css';
-import Phaser, { GameObjects, Physics } from 'phaser';
+import Phaser, { Scene, Game, GameObjects, Physics, Input } from 'phaser';
 
 // maybe consider parcel-static-files-copy
 // https://github.com/elwin013/parcel-plugin-static-files-copy
@@ -10,12 +10,12 @@ import platformImg from './assets/platform.png';
 import skyImg from './assets/sky.png';
 import starImg from './assets/star.png';
 
-let player: Phaser.Physics.Arcade.Sprite;
-let platforms: Phaser.Physics.Arcade.StaticGroup;
-let stars: Phaser.Physics.Arcade.Group;
-let bombs: Phaser.Physics.Arcade.Group;
-let cursors: Phaser.Input.Keyboard.CursorKeys;
-let scoreText: Phaser.GameObjects.Text;
+let player: Physics.Arcade.Sprite;
+let platforms: Physics.Arcade.StaticGroup;
+let stars: Physics.Arcade.Group;
+let bombs: Physics.Arcade.Group;
+let cursors: Input.Keyboard.CursorKeys;
+let scoreText: GameObjects.Text;
 let score = 0;
 let gameOver: boolean = false;
 
@@ -40,7 +40,7 @@ const config = {
   }
 };
 
-function preload(this: Phaser.Scene) {
+function preload(this: Scene) {
   this.load.image('sky', skyImg);
   this.load.image('ground', platformImg);
   this.load.image('star', starImg);
@@ -51,7 +51,7 @@ function preload(this: Phaser.Scene) {
   });
 }
 
-function create(this: Phaser.Scene) {
+function create(this: Scene) {
   this.add.image(400, 300, 'sky');
   scoreText = this.add.text(16, 16, 'score: 0', {
     fontSize: '32px',
@@ -112,7 +112,7 @@ function create(this: Phaser.Scene) {
   this.physics.add.collider(player, bombs, hitBomb, undefined, this);
 }
 
-function hitBomb(this: Phaser.Scene, player: any, bomb: any) {
+function hitBomb(this: Scene, player: any, bomb: any) {
   this.physics.pause();
   player.setTint(0xff0000);
   player.anims.play('turn');
@@ -120,13 +120,13 @@ function hitBomb(this: Phaser.Scene, player: any, bomb: any) {
 }
 
 function collectStar(player: any, star: GameObjects.GameObject) {
-  (<Phaser.Physics.Arcade.Image>star).disableBody(true, true);
+  (<Physics.Arcade.Image>star).disableBody(true, true);
   score += 10;
   scoreText.setText('Score: ' + score);
 
   if (stars.countActive(true) === 0) {
     stars.children.iterate(function(child: GameObjects.GameObject) {
-      const c = <Phaser.Physics.Arcade.Image>child;
+      const c = <Physics.Arcade.Image>child;
       c.enableBody(true, c.x, 0, true, true);
     });
     var x =
@@ -140,7 +140,7 @@ function collectStar(player: any, star: GameObjects.GameObject) {
   }
 }
 
-function update(this: Phaser.Scene) {
+function update(this: Scene) {
   if (gameOver) {
     return;
   }
@@ -161,4 +161,4 @@ function update(this: Phaser.Scene) {
   }
 }
 
-const myGame = new Phaser.Game(config);
+const myGame = new Game(config);
