@@ -3,26 +3,28 @@ import Phaser from 'phaser';
 import logoImg from './assets/logo.png';
 
 class MyGame {
-  game: Phaser.game;
+  config = {
+    type: Phaser.AUTO,
+    parent: 'phaser-example',
+    width: 800,
+    height: 600,
+    scene: {
+      preload: this.preload,
+      create: this.create
+    }
+  };
+
+  game: Phaser.Game;
 
   constructor() {
-    this.game = new Phaser.Game({
-      type: Phaser.AUTO,
-      parent: 'phaser-example',
-      width: 800,
-      height: 600,
-      scene: {
-        preload: this.preload,
-        create: this.create
-      }
-    });
+    this.game = new Phaser.Game(this.config);
   }
 
-  preload() {
+  preload(this: Phaser.Scene) {
     this.load.image('logo', logoImg);
   }
 
-  create() {
+  create(this: Phaser.Scene) {
     const logo = this.add.image(400, 150, 'logo');
 
     this.tweens.add({
