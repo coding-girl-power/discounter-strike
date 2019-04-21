@@ -1,6 +1,8 @@
 # *(o: (o: (o:* _Some developer notes..._ *:o) :o) :o)*
 
-* Markdown Cheatsheet: <https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet>
+* Markdown Cheatsheet (*.md files): <https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet>
+* Travis CI (Test and Deploy GitHub-Projects): <https://travis-ci.org/>
+* Heroku (Build apps for free): <https://www.heroku.com/free>
 
 ## Phaser 3 Link-List
 
