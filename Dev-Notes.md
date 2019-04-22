@@ -5,6 +5,7 @@
 -   Heroku (Build apps for free): <https://www.heroku.com/free>
 -   Piskel (Sprite Editor): <https://www.piskelapp.com/>
 -   Webpack 4 Tutorial: <https://www.valentinog.com/blog/webpack/>
+-   Webpack 4 Course: <https://wanago.io/courses/webpack-4-course/>
 
 ## Phaser 3 Link-List
 
