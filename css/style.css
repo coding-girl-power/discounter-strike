@@ -1,0 +1,24 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #eee;
+}
+
+canvas {
+  display: block;
+  margin: 0px auto;
+  border: 2px solid black;
+}
+
+.title, .description, .footer {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  text-align: center;
+  margin-top: 10px;
+}
+.title {
+  font-size: 18px;
+  line-height: 24px;
+}
+.description {
+  font-size: 14px;
+}
